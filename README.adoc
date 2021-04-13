@@ -1,0 +1,11 @@
+* https://codecentric.github.io/spring-boot-admin/current/#set-up-admin-server
+
+# Build docker image local
+
+----
+mvn clean package
+# Unpack jar for docker image build
+PROJECT_BUILD_FINAL_NAME=$(mvn help:evaluate -Dexpression=project.build.finalName -q -DforceStdout)
+mkdir -p target/dependency && (cd target/dependency; jar -xf ../${PROJECT_BUILD_FINAL_NAME}.jar)
+docker-compose -f docker-compose-dev-build.yml up --build
+----

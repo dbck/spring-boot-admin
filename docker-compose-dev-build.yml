@@ -1,0 +1,12 @@
+version: "3"
+services:
+  spring-boot-admin:
+    image: dbck/spring-boot-admin:dev
+    build:
+      context: .
+      args:
+        - DEPENDENCY=target/dependency
+    environment:
+      - TZ=Europe/Berlin
+    ports:
+      - "127.0.0.1:8081:8081"
