@@ -2,12 +2,13 @@
 
 name: Build
 
-on:
-  push:
-    branches:
-      - '*'         # matches every branch that doesn't contain a '/'
-      - '*/*'       # matches every branch containing a single '/'
-      - '**'        # matches every branch
+on: workflow_dispatch
+#on:
+#  push:
+#    branches:
+#      - '*'         # matches every branch that doesn't contain a '/'
+#      - '*/*'       # matches every branch containing a single '/'
+#      - '**'        # matches every branch
 #      - '!release'  # excludes release branch
 #    schedule:
 #      - cron: "0 22 * * *"
